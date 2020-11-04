@@ -1,3 +1,5 @@
+// https://stackoverflow.com/questions/48369419/how-to-subtract-two-date-time-in-mongodb
+
 db.trips.aggregate([
   {
     $group: {
@@ -17,5 +19,3 @@ db.trips.aggregate([
     },
   },
 ]);
-
-// https://stackoverflow.com/questions/48369419/how-to-subtract-two-date-time-in-mongodb
