@@ -1,8 +1,6 @@
-// Para diminuir o volume de dados trafegados, utilizando o mesmo pipeline anterior, retorne apenas os campos title, rated, imdb.rating, imdb.votes e year, modificando seus nomes para titulo, avaliado, notaIMDB, votosIMDB e ano, respectivamente.
-
-// O resultado da sua query deve ter o seguinte formato:
-// { "titulo" : "A Streetcar Named Desire", "avaliado" : "PG", "notaIMDB" : 8.1, "votosIMDB" : 72364, "ano" : 1951 }
-// Demais documentos
+// Para diminuir o volume de dados trafegados, utilizando o mesmo pipeline anterior,
+// retorne apenas os campos title, rated, imdb.rating, imdb.votes e year,
+// modificando seus nomes para titulo, avaliado, notaIMDB, votosIMDB e ano, respectivamente.
 
 db.movies.aggregate([
   {
@@ -20,8 +18,8 @@ db.movies.aggregate([
       avaliado: "$rated",
       notaIMDB: "$imdb.rating",
       votosIMDB: "$imdb.votes",
-      "ano": "$year",
-      // apenas para testar que funciona também com aspas para o alias dado
+      ano: "$year",
+      // os aliases também funcionam escritos entre aspas
     },
   },
 ]);
