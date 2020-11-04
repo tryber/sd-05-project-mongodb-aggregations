@@ -9,17 +9,19 @@
 // { "titulo" : "A Streetcar Named Desire", "avaliado" : "PG", "notaIMDB" : 8.1, "votosIMDB" : 72364, "ano" : 1951 }
 // Demais documentos
 db.movies.aggregate([
-  {$match: {"imdb.rating": {$gte: 7}}},
-  {$match: {genres: {$nin: ["Crime", "Horror"]}}},
-  {$match: {rated: {$in: ["PG", "G"]}}},
-  {$match: {languages: {$all: ["English", "Spanish"]}}},
-  {$limit: 41},
-  {$project: {
-    _id: 0,
-    titulo: "$title",
-    avaliado: "$rated",
-    notaIMDB: "$imdb.rating",
-    votosIMDB: "$imdb.votes",
-    ano: "$year"
-  }}
+  { $match: { "imdb.rating": { $gte: 7 } } },
+  { $match: { genres: { $nin: ["Crime", "Horror"] } } },
+  { $match: { rated: { $in: ["PG", "G"] } } },
+  { $match: { languages: { $all: ["English", "Spanish"] } } },
+  { $limit: 41 },
+  {
+    $project: {
+      _id: 0,
+      titulo: "$title",
+      avaliado: "$rated",
+      notaIMDB: "$imdb.rating",
+      votosIMDB: "$imdb.votes",
+      ano: "$year"
+    }
+  }
 ]);

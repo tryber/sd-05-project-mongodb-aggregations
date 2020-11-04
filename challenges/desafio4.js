@@ -15,10 +15,12 @@
 
 // Sua query deve retornar 8068 documentos.
 db.movies.aggregate([
-  {$addFields: {
-    title_split: {$split: ["$title", " "]}
-  }},
-  {$match: {title_split: {$size: 1}}},
-  {$project: {_id: 0, title_split: 1}},
-  {$sort: {title_split: 1}},
+  {
+    $addFields: {
+      title_split: { $split: ["$title", " "] }
+    }
+  },
+  { $match: { title_split: { $size: 1 } } },
+  { $project: { _id: 0, title_split: 1 } },
+  { $sort: { title_split: 1 } },
 ]);
