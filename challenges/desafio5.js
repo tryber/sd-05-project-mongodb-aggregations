@@ -12,12 +12,12 @@ db.movies.aggregate([
   },
   {
     $addFields: {
-      intersectioning: {$setIntersection: ["$cast", "$dreamCast"]}
-    }
+      intersectioning: { $setIntersection: ["$cast", "$dreamCast"] },
+    },
   },
   {
     $addFields: {
-      num_favs: { $cond: { if: { $isArray: "$intersectioning" }, then: { $size: "$intersectioning" }, else: "NA"} },
+      num_favs: { $cond: { if: { $isArray: "$intersectioning" }, then: { $size: "$intersectioning" }, else: "NA" } },
     },
   },
   {
@@ -26,7 +26,7 @@ db.movies.aggregate([
     },
   },
   {
-    $sort: {num_favs: -1, "tomatoes.viewer.rating": -1, title: -1}
+    $sort: { num_favs: -1, "tomatoes.viewer.rating": -1, title: -1 },
   },
   {
     $skip: 24,
@@ -35,6 +35,6 @@ db.movies.aggregate([
     $limit: 1,
   },
   {
-    $project: {_id: 0, title: 1 }
-  }
+    $project: { _id: 0, title: 1 },
+  },
 ]);
