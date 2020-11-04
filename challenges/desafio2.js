@@ -19,4 +19,4 @@ db.movies.aggregate(
         },
     },
   ],
-).pretty();
+);

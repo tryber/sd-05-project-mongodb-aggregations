@@ -8,4 +8,4 @@ db.movies.aggregate(
       },
     },
   ],
-).pretty();
+);
