@@ -5,7 +5,7 @@
 // e descubra qual delas tem o maior número de rotas com esses aviões. (SORT - 1 + LIMIT)
 
 // O resultado da sua query deve ter o seguinte formato:
-// { "_id" : <nome_da_alianca>, "totalRotas" : <total_de_rotas> } 
+// { "_id" : <nome_da_alianca>, "totalRotas" : <total_de_rotas> }
 // (GROUP para calcular o totalRotas)
 // (PROJECT para dizer quais campos aparecem)
 
@@ -22,7 +22,7 @@ db.air_alliances.aggregate([
   { $match: { "rotas.airplane": { $in: ["747", "380"] } } },
   { $group: { _id: "$name", totalRotas: { $sum: 1 } } },
   { $project: { _id: 1, totalRotas: 1 } },
-  { $sort: { totalRotas: - 1 } },
+  { $sort: { totalRotas: -1 } },
   { $limit: 1 },
 ]);
 
