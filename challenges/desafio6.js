@@ -1,5 +1,7 @@
+// regex peguei do andrezão
+
 db.movies.aggregate([
-  { $match: { awards: /Won\s[0-9]*\sOscar[s]*/g } }, //regex peguei do andrezão
+  { $match: { awards: /Won\s[0-9]*\sOscar[s]*/g } },
   {
     $group: {
       _id: null,
