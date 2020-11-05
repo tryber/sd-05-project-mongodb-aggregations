@@ -36,4 +36,4 @@ db.air_alliances.aggregate([
   {
     $limit: 1,
   },
-]).pretty();
+]);
