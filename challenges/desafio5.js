@@ -1,8 +1,12 @@
 db.movies.aggregate([
   {
     $match: {
-      countries: "USA",
-      "tomatoes.viewer.rating": { $gte: 3 },
+      countries: {
+        $in: ["USA"],
+      },
+      "tomatoes.viewer.rating": {
+        $gte: 3,
+      },
     },
   },
   {
@@ -13,7 +17,7 @@ db.movies.aggregate([
   {
     $addFields: {
       intersectCastList: {
-        $setIntersection: ["$cast", "$castList"],
+        $setIntersection: ["$castList", "$cast"],
       },
     },
   },
@@ -25,7 +29,7 @@ db.movies.aggregate([
     },
   },
   {
-    $addFileds: {
+    $addFields: {
       num_favs: {
         $size: "$intersectCastList",
       },
