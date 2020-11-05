@@ -12,8 +12,7 @@ O resultado da sua query deve ter o seguinte formato:
 
 */
 
-db.movies
-  .aggregate([
+db.movies.aggregate([
     {
       $match: {
         $and: [
@@ -41,5 +40,4 @@ db.movies
         ano: "$year",
       },
     },
-  ])
-  .pretty();
+  ]).pretty();
