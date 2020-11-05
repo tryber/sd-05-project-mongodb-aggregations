@@ -26,3 +26,5 @@ db.trips.aggregate([
     $limit: 5,
   },
 ]);
+
+// transparencia: para o requisito 11 e 12, precisei ver o comentário/commit "change projection from true to value" do colega Paulo DAndrea
