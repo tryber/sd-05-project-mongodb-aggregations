@@ -4,11 +4,11 @@ db.trips.aggregate([
   },
   {
     $addFields: {
-      numberYear: {$toInt: "$birthYear"},
+      numberYear: { $toInt: "$birthYear" },
     },
   },
   {
-    $group: { 
+    $group: {
       _id: null,
       maiorAnoNascimento: { $max: "$numberYear" },
       menorAnoNascimento: { $min: "$numberYear" },
