@@ -21,7 +21,7 @@ db.trips.aggregate([
   {
     $project: {
       _id: 0,
-      startStationName: "$_id",
+      nomeEstacao: "$_id",
       total: "$total",
     },
   },
@@ -29,4 +29,4 @@ db.trips.aggregate([
   { $limit: 1 },
 ]);
 
-// retorna bem { "startStationName" : "Pershing Square North", "total" : 5391 }
+// retorna bem { "nomeEstacao" : "Pershing Square North", "total" : 5391 }
