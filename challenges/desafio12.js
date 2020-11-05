@@ -5,14 +5,17 @@ db.trips.aggregate([
     },
   },
   {
+    $match: { qualDia: 5 },
+  },
+  {
     $group: {
-      _id: "$qualDia",
+      _id: "$startStationName",
       total: { $sum: 1 },
     },
   },
   {
     $project: {
-      diaDaSemana: "$_id",
+      nomeEstacao: "$_id",
       total: 1,
       _id: 0,
     },
@@ -22,5 +25,5 @@ db.trips.aggregate([
   },
   {
     $limit: 1,
-  },
+  }
 ]);
