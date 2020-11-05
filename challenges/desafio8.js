@@ -11,7 +11,7 @@ db.air_alliances.aggregate([
     },
   },
   {
-    $unwind: "$routesInfo"
+    $unwind: "$routesInfo",
   },
   {
     $match: {
