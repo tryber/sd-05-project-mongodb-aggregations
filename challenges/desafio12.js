@@ -1,6 +1,6 @@
 db.trips.aggregate([
   {
-    $match: { $startTime: { $ne: "" } },
+    $match: { startTime: { $ne: "" } },
   },
   {
     $addFields: {
