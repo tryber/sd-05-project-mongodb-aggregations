@@ -1,7 +1,6 @@
 // Regex do Felipe
-
 db.movies.aggregate([
-  { $match: { oscars: { $regex: /Won (?:1(?:[0-9] Oscars| Oscar)|[2-9] Oscars)/ } } },
+  { $match: { awards: { $regex: /Won (?:1(?:[0-9] Oscars| Oscar)|[2-9] Oscars)/ } } },
   {
     $group: {
       maior_rating: { $max: "$imdb.rating" },

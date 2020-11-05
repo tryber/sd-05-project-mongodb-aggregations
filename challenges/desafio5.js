@@ -1,5 +1,4 @@
 // Ajuda do Felipe que tirou inspiração no Dandrea
-
 db.movies.aggregate([
   {
     $match: {
@@ -22,7 +21,7 @@ db.movies.aggregate([
       },
     },
   },
-  { $match: { matchingActors: { $size: null } } },
+  { $match: { matchingActors: { $ne: null } } },
   { $addFields: { num_favs: { $size: "$matchingActors" } } },
   { $sort: { num_favs: -1, "tomatoes.viewer.rating": -1, title: -1 } },
   { $skip: 24 },
