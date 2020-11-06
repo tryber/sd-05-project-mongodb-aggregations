@@ -8,3 +8,20 @@
 // Utilizando a coleção movies, faça um pipeline que retorne todos esses filmes.
 // 
 // Sua query deve retornar 41 documentos.
+
+db.movies.aggregate([
+  {$match: {"imdb.rating": {$gte: 7}}},
+  {$match: {"genres": {$nin: ["Crime", "Horror"]}}},
+  {$match:
+    {$or: [
+      {"rated": "PG"},
+      {"rated": "G"}
+    ]}
+  },
+  {$match:
+    {$and: [
+      {"languages": "English"},
+      {"languages": "Spanish"}
+    ]}
+  }
+]);
