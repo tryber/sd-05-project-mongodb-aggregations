@@ -1,4 +1,5 @@
-//referência: Peguei o parte de regex do Projeto da Juliette(aluna da turma 5), pois o regex que eu fiz não passou.
+// referência: Utilizei apenas a parte de regex do Projeto da Juliette(aluna da turma 5),
+//pois o regex que eu fiz não passou.
 db.movies.aggregate([
   {
     $match: {
