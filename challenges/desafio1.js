@@ -19,3 +19,8 @@ db.movies.aggregate([
   },
 ]);
 // .itcount();
+
+// [Honestidade acadêmica]
+// Para a realização do projeto a seguir, dois PRs foram pontualmente consultados:
+// Paulo Dandrea - https://github.com/tryber/sd-05-project-mongodb-aggregations/pull/1/files
+// Felipe Vieira - https://github.com/tryber/sd-05-project-mongodb-aggregations/pull/12/files
