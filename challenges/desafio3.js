@@ -14,8 +14,8 @@ O resultado da sua query deve ter o seguinte formato:
 
 db.movies.aggregate([
   { $match: { $and: [
-    { "imdb.rating": { $gte: 7 } },
     { genres: { $nin: ["Crime", "Horror"] } },
+    { "imdb.rating": { $gte: 7 } },
     {
       rated: { $in: ["PG", "G"] },
     },
