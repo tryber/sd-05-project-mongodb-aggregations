@@ -1,5 +1,5 @@
-/* 
-Ajude a Trybe a escolher um filme para a próxima noite! Baseado em uma pesquisa, decidimos que 
+/*
+Ajude a Trybe a escolher um filme para a próxima noite! Baseado em uma pesquisa, decidimos que
 os filmes em potencial devem atender aos seguintes critérios:
 
 imdb.rating deve ser ao menos 7;
@@ -12,37 +12,31 @@ Sua query deve retornar 41 documentos.
 
 */
 
-db.movies.aggregate(
-  [
-    {$match: {
+db.movies.aggregate([
+  {
+    $match: {
       $and: [
-        { "imdb.rating": 
-          { $gte: 7 }
-        },
-        { genres:
-          {$nin: [ "Crime" ,"Horror" ]}
+        { "imdb.rating": { $gte: 7 } },
+        { genres: { $nin: ["Crime", "Horror"] } },
+        {
+          rated: { $in: ["PG", "G"] },
         },
         {
-          rated: 
-          { $in: ["PG", "G"]}
+          languages: "English",
         },
         {
-          languages: "English"
+          languages: "Spanish",
         },
-        {
-          languages: "Spanish"
-        }
-      ]
-      }
+      ],
     },
-    // {
-    //   $group: {
-    //   _id: null,
-    //   count: 
-    //     {
-    //       $sum: 1
-    //     }
-    //   }
-    // }
-  ]
-);
+  },
+  // {
+  //   $group: {
+  //   _id: null,
+  //   count:
+  //     {
+  //       $sum: 1
+  //     }
+  //   }
+  // }
+]);
