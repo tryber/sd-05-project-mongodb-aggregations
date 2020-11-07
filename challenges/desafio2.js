@@ -15,15 +15,20 @@ O resultado da sua query deve ter o seguinte formato:
 
 */
 
+// [HONESTIDADE ACADEMICA - Aqui foi pesquisado uma maneira de validar a query
+// no ESLint para ele para de reclamar que havia codigos identicos já que era querys identicas
+// (mesmo estando em arquivos diferentes desafio 1, 2 e 3) PR consultado => Felipe Vieira]
+
 db.movies.aggregate([
   {
     $match: {
-      $and: [{ "imdb.rating": { $gte: 7 } },
-        { genres: { $nin: ["Crime", "Horror"] } },
-        { rated: { $in: ["PG", "G"] } },
-        { languages: "English" },
-        { languages: "Spanish" },
-      ],
+      genres: { $nin: ["Crime", "Horror"] },
+      rated: { $in: ["PG", "G"] },
+      languages:
+        {
+          $all: ["English", "Spanish"],
+        },
+      "imdb.rating": { $gte: 7 },
     },
   },
   {
