@@ -32,11 +32,11 @@ db.movies.aggregate([
     },
   },
   {
-    $group: {
-      _id: null,
+    $project: {
+      // _id: null,
       maior_rating: { $max: "$imdb.rating" },
-      // menor_rating: { $min: "$imdb.rating" },
-      // media_rating: { $avg: "$imdb.rating" },
+      // menor_rating: { $min: { $sum: "$imdb.rating" } },
+      // media_rating: { $avg: { $sum: "$imdb.rating" } },
 
     },
   },
