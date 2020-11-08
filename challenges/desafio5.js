@@ -59,7 +59,7 @@ db.movies.aggregate([
     },
   },
   {
-    $sort: { num_fav: -1, "tomatoes.viewer.rating": -1, title: -1 },
+    $sort: { num_favs: -1, "tomatoes.viewer.rating": -1, title: -1 },
   },
   {
     $skip: 24,
