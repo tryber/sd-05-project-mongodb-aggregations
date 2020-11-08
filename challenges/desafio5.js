@@ -1,4 +1,3 @@
-// Ajuda do Felipe que tirou inspiração no Dandrea
 db.movies.aggregate([
   {
     $match: {
