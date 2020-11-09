@@ -9,28 +9,26 @@ const favs = [
 db.movies.aggregate([
   {
     $match: {
-      $and: [
-        { countries: "EUA" },
-        { "tomatoes.viewer.rating": { $gte: 3 } },
-        { cast: { $in: favs } },
-      ],
+      countries: "USA",
+      "tomatoes.viewer.rating": { $gte: 3 },
+      cast: { $in: favs },
     },
   },
   {
     $addFields: {
-      num_favs: {
-        $size: {
-          $setIntersection: ["$cast", favs],
-        },
+      favoritos: {
+        $setIntersection: [favs, "$cast"],
       },
     },
   },
   {
-    $project: {
-      num_favs: true,
-      "tomatoes.viewer.rating": true,
-      title: true,
-      _id: false,
+    $match: {
+      favoritos: { $exists: true },
+    },
+  },
+  {
+    $addFields: {
+      num_favs: { $size: "$favoritos" },
     },
   },
   {
