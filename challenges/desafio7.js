@@ -12,4 +12,10 @@ db.movies.aggregate([
       mediaIMDB: { $avg: "$imdb.rating" },
     },
   },
+  {
+    $sort: {
+      numeroFilmes: -1,
+      _id: -1,
+    },
+  },
 ]);
