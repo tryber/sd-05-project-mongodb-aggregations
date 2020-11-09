@@ -6,7 +6,6 @@ db.movies.aggregate([
       {"rated": {$in:["PG", "G"]}},
       {"languages": {$all:["English", "Spanish"]}}
     ]
-  }},
-  { $group: { _id: null, myCount: { $sum: 1 } } }
+  }}
 ]).pretty();
 // HA Hugo Costa
