@@ -42,7 +42,7 @@ db.movies.aggregate([
     },
   },
   {
-    $addFields: {
+    $set: {
       num_favs: { $size: "$topActorsinCast" },
     },
   },
