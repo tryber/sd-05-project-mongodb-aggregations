@@ -1,0 +1,1 @@
+db.trips.aggregate([{ $addFields: { duracao: { $subtract: ["$stopTime", "$startTime"] } } }, { $group: { _id: "$usertype", duracaoMedia: { $avg: "$duracao" } } }, { $project: { tipo: "$_id", duracaoMedia: { $round: [{ $divide: ["$duracaoMedia", 3600000] }, 2] }, _id: 0 } }, { $sort: { duracaoMedia: 1 } }]);
