@@ -1,7 +1,7 @@
 db.movies.aggregate([
   {
     $match: {
-      awards: { $regex: /Won \d Oscars/gi },
+      awards: { $regex: /^Won \d{1,4} Oscar(s)?/ },
     },
   },
   {
@@ -21,8 +21,5 @@ db.movies.aggregate([
       desvio_padrao: { $round: ["$desvio_padrao", 1] },
       _id: false,
     },
-  },
-  {
-    $limit: 1,
   },
 ]);
