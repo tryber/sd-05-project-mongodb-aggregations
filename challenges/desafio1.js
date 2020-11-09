@@ -7,6 +7,6 @@ db.movies.aggregate(
         "imdb.rating": { $gte: 7 },
         languages: { $all: ["English", "Spanish"] },
       },
-    }
-  ]
+    },
+  ],
 );
