@@ -29,7 +29,7 @@ db.trips.aggregate([
   // },
   {
     $addFields: {
-      data: { $toInt: "$birthYear"},
+      data: { $toInt: "$birthYear" },
     },
   },
   {
