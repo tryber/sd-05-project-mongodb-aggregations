@@ -1,4 +1,5 @@
-// A partir da coleção trips, determine o menor e o maior ano de nascimento. Guarde essa informação, você precisará dela mais tarde.
+// A partir da coleção trips, determine o menor e o maior ano de nascimento. Guarde essa informação,
+// você precisará dela mais tarde.
 
 // Não considere documentos com valores vazios ("") ou em que o campo não existe!
 

@@ -1,4 +1,5 @@
-// Considerando todos os filmes que ganharam o Oscar pelo menos uma vez, calcule o maior valor, menor valor, média e o desvio padrão das avaliações (campo imdb.rating).
+// Considerando todos os filmes que ganharam o Oscar pelo menos uma vez, calcule o maior valor, menor
+// valor, média e o desvio padrão das avaliações (campo imdb.rating).
 
 db.movies.aggregate([
   {

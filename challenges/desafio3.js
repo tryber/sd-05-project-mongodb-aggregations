@@ -1,12 +1,13 @@
-// retorne esses filmes ordenados por ano e nota IMDB de forma decrescente e o título por ordem alfabética (nesta ordem de desempate).
+// retorne esses filmes ordenados por ano e nota IMDB de forma decrescente e o título por ordem
+// alfabética (nesta ordem de desempate).
 
 db.movies.aggregate([
   {
     $match: {
-      "imdb.rating": { $gte: 7 },
-      genres: { $nin: ["Crime", "Horror"] },
-      rated: { $in: ["PG", "G"] },
       languages: { $all: ["English", "Spanish"] },
+      rated: { $in: ["PG", "G"] },
+      genres: { $nin: ["Crime", "Horror"] },
+      "imdb.rating": { $gte: 7 },
     },
   },
   {

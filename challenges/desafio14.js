@@ -1,4 +1,7 @@
-// Baseado na duração média das viagens, determine quais são as 5 bicicletas que foram mais utilizadas. Exiba o resultado em minutos arredondados para cima e em ordem decrescente.
+// Baseado na duração média das viagens, determine quais são as 5 bicicletas que foram mais utilizadas.
+// Exiba o resultado em minutos arredondados para cima e em ordem decrescente.
+
+const minutes = 60 * 100;
 
 db.trips.aggregate([
   {
@@ -6,9 +9,16 @@ db.trips.aggregate([
       _id: "$bikeid",
       duracaoMedia: {
         $avg: {
-          $divide: [{ $subtract: ["$stopTime", "$startTime"] }, 60 * 1000],
+          $divide: [{ $subtract: ["$stopTime", "$startTime"] }, minutes],
         },
       },
+    },
+  },
+  {
+    $project: {
+      _id: 0,
+      bikeId: "$_id",
+      duracaoMedia: { $ceil: "$duracaoMedia" },
     },
   },
   {
@@ -18,12 +28,5 @@ db.trips.aggregate([
   },
   {
     $limit: 5,
-  },
-  {
-    $project: {
-      _id: 0,
-      bikeId: "$_id",
-      duracaoMedia: { $ceil: "$duracaoMedia" },
-    },
   },
 ]);
