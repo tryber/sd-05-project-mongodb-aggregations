@@ -22,6 +22,8 @@ O resultado da sua query deve ter o seguinte formato:
 
 { "_id" : <nome_da_alianca>, "totalRotas" : <total_de_rotas> }
 */
+// [HONESTIDADE ACADEMICA] => Neste desafio, contei com a ajuda e suporte no plantao em quanto
+// a Virginia tira duvidas do mesmo desafio ( qualquer semelhança, não é mera coincidencia )
 
 db.air_alliances.aggregate([
   {
