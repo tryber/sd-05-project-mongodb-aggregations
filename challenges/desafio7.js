@@ -38,8 +38,9 @@ db.movies.aggregate([
       mediaIMDB: { $round: ["$media", 1] },
     },
   },
+  // [HONESTIDADE ACADEMICA] esclarecimentos em relacão a ordenação  por campo correto PR (Virginia)
   {
-    $sort: { numeroFilmes: -1, cast: -1 },
+    $sort: { numeroFilmes: -1, _id: -1 },
   },
   {
     $project: {
