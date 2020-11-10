@@ -44,8 +44,11 @@ db.movies.aggregate([
   {
     $project: {
       _id: 1,
-      numeroFilmes: 1,
-      mediaIMDB: 1,
+      numeroFilmes: "$numeroFilmes",
+      mediaIMDB: "$mediaIMDB",
     },
   },
+  // {
+  //   $count: "qtd",
+  // },
 ]);
