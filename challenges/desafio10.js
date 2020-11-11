@@ -6,6 +6,6 @@ db.trips.aggregate([
     _id: "$usertype",
     duracaoMedia: { $avg: { $subtract: ["$stopTime", "$startTime"] } },
   } },
-  { $project: { _id: 1, duracaoMedia: { $round: [{ $divide: ["$duracaoMedia", 3600000] }, 2] } } },
-  { $sort: { _id: -1 } },
+  { $project: { _id: 0, tipo: "$_id", duracaoMedia: { $round: [{ $divide: ["$duracaoMedia", 3600000] }, 2] } } },
+  { $sort: { tipo: -1 } },
 ]);

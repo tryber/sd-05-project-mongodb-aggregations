@@ -1,6 +1,6 @@
 db.air_alliances.aggregate([
-  { $unwind: "$airlines" },
-  { $project: { _id: 0 } },
+  /* { $unwind: "$airlines" },
+  { $project: { _id: 0 } }, */
   { $lookup: {
     from: "air_routes",
     localField: "airlines",
