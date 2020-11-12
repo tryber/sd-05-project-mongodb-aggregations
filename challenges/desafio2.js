@@ -1,4 +1,5 @@
-db.movies.aggregate([ // Seleciono(aggregates) os movies
+db.movies.aggregate([
+  // Seleciono(aggregates) os movies
   {
     $match: {
       $and: [
@@ -6,6 +7,7 @@ db.movies.aggregate([ // Seleciono(aggregates) os movies
         { genres: { $nin: ["Crime", "Horror"] } }, // Não incluindo ($nin) os generos Crime e Horror
         { rated: { $in: ["PG", "G"] } }, // Incluindo ($in) as classificações
         { languages: { $all: ["English", "Spanish"] } }, // Selecionando todas ($all) com linguagem em Esp e Ing
+        { $limit: 41 },
       ],
     },
   },
