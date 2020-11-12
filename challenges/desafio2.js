@@ -13,8 +13,8 @@ db.movies.aggregate([
   {
     $project: {
       _id: 0,
-      avaliado: "$rated", // Modifica $rated para avaliado
       titulo: "$title", // Modifica $title para titulo
+      avaliado: "$rated", // Modifica $rated para avaliado
       notaIMDB: "$imdb.rating", // Modifica $imdb.rating para notaIMDB
       votosIMDB: "$imdb.votes", // Modifica $imdb.votes para votosIMDB
       ano: "$year", // Modifica $year para ano
