@@ -1,6 +1,6 @@
 // Desafio 1
-// Ajude a Trybe a escolher um filme para a próxima noite! 
-// Baseado em uma pesquisa, decidimos que os filmes em potencial 
+// Ajude a Trybe a escolher um filme para a próxima noite!
+// Baseado em uma pesquisa, decidimos que os filmes em potencial
 // devem atender aos seguintes critérios:
 
 // imdb.rating deve ser ao menos 7;
@@ -16,6 +16,6 @@ db.movies.aggregate(
           { rated: { $in: ["PG", "G"] } },
           { languages: { $all: ["English", "Spanish"] } },
         ],
-        }},{ $limit: 41 },
+        }}, { $limit: 41 },
 );
 // Sua query deve retornar 41 documentos.
