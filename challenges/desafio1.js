@@ -1,6 +1,7 @@
 // Desafio 1
 // Ajude a Trybe a escolher um filme para a próxima noite! 
-// Baseado em uma pesquisa, decidimos que os filmes em potencial devem atender aos seguintes critérios:
+// Baseado em uma pesquisa, decidimos que os filmes em potencial 
+// devem atender aos seguintes critérios:
 
 // imdb.rating deve ser ao menos 7;
 // genres não deve conter Crime ou Horror;
@@ -8,13 +9,13 @@
 // languages contém English e Spanish.
 // Utilizando a coleção movies, faça um pipeline que retorne todos esses filmes.
 db.movies.aggregate(
-    { $match:
-        { $and: [ 
-            { "imdb.rating": { $gte: 7 } },
-            { genres: { $nin: ["Crime", "Horror"] } },
-            { rated: { $in: ["PG", "G"] } },
-            { languages: { $all: ["English", "Spanish"] } }
-            ]
-        }},{ $limit: 41 }
+  { $match:
+        { $and: [
+          { "imdb.rating": { $gte: 7 } },
+          { genres: { $nin: ["Crime", "Horror"] } },
+          { rated: { $in: ["PG", "G"] } },
+          { languages: { $all: ["English", "Spanish"] } },
+        ],
+        }},{ $limit: 41 },
 );
 // Sua query deve retornar 41 documentos.
