@@ -5,10 +5,7 @@
 
 db.trips.aggregate([
   {
-    $match: {
-      birthYear: { $exists: true },
-      birthYear: { $ne: "" },
-    },
+    $match: { birthYear: { $nin: ["", null] } },
   },
   {
     $group: {
