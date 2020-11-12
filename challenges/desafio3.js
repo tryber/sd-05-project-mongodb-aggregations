@@ -11,15 +11,14 @@ db.movies.aggregate([
       $and: [{ languages: "English" }, { languages: "Spanish" }],
     },
   },
-  {
-    $project: {
-      _id: 0,
-      titulo: "$title", // Modifica $title para titulo
-      avaliado: "$rated", // Modifica $rated para avaliado
-      notaIMDB: "$imdb.rating", // Modifica $imdb.rating para notaIMDB
-      votosIMDB: "$imdb.votes", // Modifica $imdb.votes para votosIMDB
-      ano: "$year", // Modifica $year para ano
-    },
+  { $project: {
+    _id: 0,
+    titulo: "$title", // Modifica $title para titulo
+    avaliado: "$rated", // Modifica $rated para avaliado
+    votosIMDB: "$imdb.votes", // Modifica $imdb.votes para votosIMDB
+    ano: "$year", // Modifica $year para ano
+    notaIMDB: "$imdb.rating", // Modifica $imdb.rating para notaIMDB
+  },
   },
   {
     $sort: {
