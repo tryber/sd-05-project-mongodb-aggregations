@@ -9,7 +9,8 @@
 
 // Crie um _pipeline_ que adicione um campo `title_split`
 // contendo a lista de palavras presentes em `title`
-// e retorne apenas o novo campo `title_split` dos filmes com o título composto apenas de uma palavra,
+// e retorne apenas o novo campo `title_split` dos filmes com
+// o título composto apenas de uma palavra,
 // ordernando-os por `title` em ordem alfabética. Por exemplo, `"Cinderela"` e `"3-25"`
 // devem entrar nessa contagem, mas `"Cast Away"` não.
 
@@ -21,7 +22,7 @@ db.movies.aggregate([
   {
     $addFields:
     {
-      title_split: { $split: ["$title", " "] }
+      title_split: { $split: ["$title", " "] },
     },
   },
   {
