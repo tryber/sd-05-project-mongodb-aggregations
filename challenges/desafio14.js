@@ -1,5 +1,5 @@
-// Baseado na duração média das viagens, determine quais são as 5 bicicletas que foram mais utilizadas.
-// Exiba o resultado em minutos arredondados para cima e em ordem decrescente.
+// Baseado na duração média das viagens, determine quais são as 5 bicicletas que foram mais
+// utilizadas. Exiba o resultado em minutos arredondados para cima e em ordem decrescente.
 
 const minutes = 60 * 100;
 

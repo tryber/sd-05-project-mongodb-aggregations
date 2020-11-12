@@ -1,7 +1,7 @@
-// Traga o nome do ator ou atriz, número de filmes em que participou e a média do imdb desses filmes
-// arredondada para uma casa decimal usando o operador $round. Considere somente os membros do elenco de
-// filmes com o idioma inglês (English). Exiba a lista em ordem decrescente de documentos pelo número de
-// filmes e nome do ator ou atriz.
+// Traga o nome do ator ou atriz, número de filmes em que participou e a média do imdb desses
+// filmes arredondada para uma casa decimal usando o operador $round. Considere somente os membros
+// do elenco de filmes com o idioma inglês (English). Exiba a lista em ordem decrescente de
+// documentos pelo número de filmes e nome do ator ou atriz.
 
 db.movies.aggregate([
   {
