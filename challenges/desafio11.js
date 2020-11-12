@@ -1,12 +1,12 @@
 db.trips.aggregate([
   {
-    $match: {
-      startTime: { $exists: true },
+    $addFields: {
+      diaDaSemana: { $dayOfWeek: "$startTime" },
     },
   },
   {
     $group: {
-      _id: { $dayOfWeek: "$startTime" },
+      _id: "$diaDaSemana",
       total: { $sum: 1 },
     },
   },
@@ -20,9 +20,9 @@ db.trips.aggregate([
   },
   {
     $project: {
-      diaDaSemana: "$_id",
-      total: true,
       _id: false,
+      diaDaSemana: "$_id",
+      total: "$total",
     },
   },
 ]);
