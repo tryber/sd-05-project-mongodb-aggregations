@@ -3,7 +3,7 @@ const favs = [
   "Tom Hanks",
   "Julia Roberts",
   "Kevin Spacey",
-  "Gerge Clooney",
+  "George Clooney",
 ];
 
 db.movies.aggregate([
@@ -16,19 +16,11 @@ db.movies.aggregate([
   },
   {
     $addFields: {
-      favoritos: {
-        $setIntersection: [favs, "$cast"],
+      num_favs: {
+        $size: {
+          $setIntersection: ["$cast", favs],
+        },
       },
-    },
-  },
-  {
-    $match: {
-      favoritos: { $exists: true },
-    },
-  },
-  {
-    $addFields: {
-      num_favs: { $size: "$favoritos" },
     },
   },
   {
