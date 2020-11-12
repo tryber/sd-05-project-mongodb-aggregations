@@ -8,14 +8,14 @@
 // rated deve ser igual a PG ou G;
 // languages contém English e Spanish.
 // Utilizando a coleção movies, faça um pipeline que retorne todos esses filmes.
-db.movies.aggregate(
+db.movies.aggregate([
   {
     $match: {
-      "imdb.rating": { $gte: 7 },
-      languages: { $all: ["English", "Spanish"] },
-      rated: { $in: ["PG", "G"] },
-      genres: { $nin: ["Crime", "Horror"] },
+    genres: { $nin: ["Crime", "Horror"] },
+    "imdb.rating": { $gte: 7 },
+    rated: { $in: ["PG", "G"] },
+    languages: { $all: ["English", "Spanish"] },
     },
-  }, { $limit: 41 },
-);
+  },
+  ]);
 // Sua query deve retornar 41 documentos.
