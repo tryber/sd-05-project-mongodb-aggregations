@@ -18,4 +18,3 @@ db.movies.aggregate(
         }},{ $limit: 41 }
 );
 // Sua query deve retornar 41 documentos.
-
