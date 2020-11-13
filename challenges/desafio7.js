@@ -1,4 +1,3 @@
-
 // MATCH
 // Considere somente os membros do elenco de filmes com o idioma inglês (English)
 
@@ -24,9 +23,7 @@ db.movies.aggregate([
   {
     $match: { languages: { $eq: "English" } },
   },
-  {
-      $unwind: "$cast"
-  },
+  { $unwind: "$cast" },
   {
     $group: {
       _id: "$cast",
