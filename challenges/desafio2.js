@@ -14,10 +14,10 @@ db.movies.aggregate([
     $project: {
       _id: 0,
       titulo: "$title", // Modifica $title para titulo
-      avaliado: "$rated", // Modifica $rated para avaliado
       notaIMDB: "$imdb.rating", // Modifica $imdb.rating para notaIMDB
-      votosIMDB: "$imdb.votes", // Modifica $imdb.votes para votosIMDB
+      avaliado: "$rated", // Modifica $rated para avaliado
       ano: "$year", // Modifica $year para ano
+      votosIMDB: "$imdb.votes", // Modifica $imdb.votes para votosIMDB
     },
   },
 ]);
