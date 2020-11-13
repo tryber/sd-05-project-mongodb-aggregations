@@ -7,6 +7,7 @@ db.movies.aggregate([
         { genres: { $nin: ["Crime", "Horror"] } }, // Não incluindo ($nin) os generos Crime e Horror
         { languages: { $all: ["English", "Spanish"] } }, // Selecionando todas ($all) com linguagem em Esp e Ing
         { rated: { $in: ["PG", "G"] } }, // Incluindo ($in) as classificações
+        { $limit: 41 },
       ],
     },
   },
