@@ -1,8 +1,6 @@
 // Desafio 1
-// Ajude a Trybe a escolher um filme para a próxima noite!
-// Baseado em uma pesquisa, decidimos que os filmes em potencial
-// devem atender aos seguintes critérios:
 
+// {MATCH}
 // imdb.rating deve ser ao menos 7;
 // genres não deve conter Crime ou Horror;
 // rated deve ser igual a PG ou G;

@@ -1,6 +1,6 @@
 // ##### Desafio 3
 
-// Agora que você tem os campos essenciais, retorne esses filmes ordenados por ano
+// {SORT}
 // e nota IMDB de forma decrescente e o título por ordem alfabética (nesta ordem de desempate).
 
 // O resultado da sua query deve ter o seguinte formato:
