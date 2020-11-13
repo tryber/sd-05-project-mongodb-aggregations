@@ -1,6 +1,6 @@
 db.trips.aggregate([
   {
-    $addFields: { diaDaSemana: { $dayOfWeek: "$startTime" } },// Gera documentos que contêm todos os campos existentes
+    $addFields: { diaDaSemana: { $dayOfWeek: "$startTime" } }, // Gera documentos que contêm todos os campos existentes
     // (dayOfWeek) extrair o dia da semana como numero
   },
   { $match: { diaDaSemana: 5 } }, // retorna os dias da semana que contenha 5
