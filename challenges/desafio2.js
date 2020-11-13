@@ -11,13 +11,13 @@ db.movies.aggregate([
     },
   },
   {
-    $project: {
+    $project: { // passa os campos solicitados para o pipeline
       _id: 0,
+      avaliado: "$rated", // Modifica $rated para avaliado
       titulo: "$title", // Modifica $title para titulo
       notaIMDB: "$imdb.rating", // Modifica $imdb.rating para notaIMDB
-      avaliado: "$rated", // Modifica $rated para avaliado
-      ano: "$year", // Modifica $year para ano
       votosIMDB: "$imdb.votes", // Modifica $imdb.votes para votosIMDB
+      ano: "$year", // Modifica $year para ano
     },
   },
 ]);
