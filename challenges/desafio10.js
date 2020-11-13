@@ -1,15 +1,10 @@
-const secInMin = 60;
-const minInHour = 60;
-const milInSecon = 1000;
-const constant = minInHour * secInMin * milInSecon;
-
 db.trips.aggregate([
   {
     $group: {
       _id: "$usertype",
       duracaoMedia: {
         $avg: {
-          $divide: [{ $subtract: ["$stopTime", "$startTime"] }, constant],
+          $divide: [{ $subtract: ["$stopTime", "$startTime"] }, 3600000],
         },
       },
     },
