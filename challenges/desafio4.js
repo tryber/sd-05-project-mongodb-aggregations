@@ -1,20 +1,3 @@
-// ##### Desafio 4
-
-// {addFields} - Criar campo
-// Crie um _pipeline_ que adicione um campo `title_split`
-// contendo a lista de palavras presentes em `title`
-
-// {MATCH} {$SIZE: 1}
-// e retorne apenas o novo campo `title_split` dos filmes com
-// o título composto apenas de uma palavra,
-
-// ordernando-os por `title` em ordem alfabética. Por exemplo, `"Cinderela"` e `"3-25"`
-// devem entrar nessa contagem, mas `"Cast Away"` não.
-
-// Dica: utilize os operadores `$split`, `$size` e `$sort` para te auxiliar.
-// [Documentação do $split](https://docs.mongodb.com/manual/reference/operator/aggregation/split/)
-
-// Sua query deve retornar `8068` documentos.
 db.movies.aggregate([
   {
     $addFields:

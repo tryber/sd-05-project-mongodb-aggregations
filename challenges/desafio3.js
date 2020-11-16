@@ -1,15 +1,3 @@
-// ##### Desafio 3
-
-// {SORT}
-// e nota IMDB de forma decrescente e o título por ordem alfabética (nesta ordem de desempate).
-
-// O resultado da sua query deve ter o seguinte formato:
-
-// ```javascript
-// { "titulo" : "McFarland, USA", "avaliado" : "PG", "notaIMDB" : 7.5,
-//  "votosIMDB" : 14091, "ano" : 2015 }
-// // Demais documentos
-// ```
 db.movies.aggregate([
   {
     $match: {
