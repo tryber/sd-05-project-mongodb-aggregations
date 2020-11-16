@@ -2,33 +2,33 @@ db.trips.aggregate([
   {
     $match: {
       $expr: {
-        $eq: [5, { $dayOfWeek: "$startTime" }]
-      }
-    }
+        $eq: [5, { $dayOfWeek: "$startTime" }],
+      },
+    },
   },
   {
     $group: {
       //  _id: chave composta por duas chaves
       _id: {
         id: "$startStationId",
-        name: "$startStationName"
+        name: "$startStationName",
       },
-      total: { $sum: 1 }
-    }
+      total: { $sum: 1 },
+    },
   },
   {
     $project: {
       _id: 0,
       nomeEstacao: "$_id.name",
-      total: "$total"
-    }
+      total: "$total",
+    },
   },
   {
     $sort: {
-      total: -1
-    }
+      total: -1,
+    },
   },
   {
-    $limit: 1
-  }
+    $limit: 1,
+  },
 ]);
