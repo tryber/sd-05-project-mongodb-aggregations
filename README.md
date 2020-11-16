@@ -6,19 +6,14 @@ Aqui você vai encontrar os detalhes de como estruturar o desenvolvimento do seu
 
 ---
 
-### Data de Entrega
-
-O projeto tem até a seguinte data: `13/11/2020 - 14:00h`. Para ser entregue a avaliação final.
-
----
 ## Instruções para entregar seu projeto:
 
 ### ANTES DE COMEÇAR A DESENVOLVER:
 
 1. Clone o repositório
-  * `git clone git@github.com:tryber/sd-05-project-mongodb-aggregations.git`.
+  * `git clone git@github.com:tryber/sd-04-mongodb-aggregations.git`.
   * Entre na pasta do repositório que você acabou de clonar:
-    * `cd sd-05-project-mongodb-aggregations`
+    * `cd sd-04-mongodb-aggregations`
 
 2. Crie uma branch a partir da branch `master`
   * Verifique que você está na branch `master`
@@ -48,13 +43,13 @@ O projeto tem até a seguinte data: `13/11/2020 - 14:00h`. Para ser entregue a a
   * Usando o exemplo anterior: `git push -u origin seu-nome-mongodb-aggregations`
 
 6. Crie um novo `Pull Request` _(PR)_
-  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-05-project-mongodb-aggregations/pulls)
+  * Vá até a página de _Pull Requests_ do [repositório no GitHub](https://github.com/tryber/sd-04-mongodb-aggregations/pulls)
   * Clique no botão verde _"New pull request"_
   * Clique na caixa de seleção _"Compare"_ e escolha a sua branch **com atenção**
   * Clique no botão verde _"Create pull request"_
   * Adicione uma descrição para o _Pull Request_ e clique no botão verde _"Create pull request"_
   * **Não se preocupe em preencher mais nada por enquanto!**
-  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-05-project-mongodb-aggregations/pulls) e confira que o seu _Pull Request_ está criado
+  * Volte até a [página de _Pull Requests_ do repositório](https://github.com/tryber/sd-04-mongodb-aggregations/pulls) e confira que o seu _Pull Request_ está criado
 
 ---
 
@@ -93,18 +88,6 @@ Para esse projeto, diferentemente dos outros, você vai utilizar vários dataset
 Vamos trabalhar com dados do **IMDB**, dados sobre empresas aéreas e também dados que contenham registros de deslocamento de pessoas que utilizam bicicletas. Esperamos que você curta muito o projeto e fixe muito bem o que aprendeu até aqui!
 
 Então vamos lá aplicar seu conhecimento nesses cenários muito legais! 😉
-
----
-
-# Análise Estática 
-
-Usaremos o [ESLint](https://eslint.org/) para fazer a análise estática do seu código.
-
-Este projeto já vem com as dependências relacionadas ao _linter_ configuradas no arquivos `package.json`.
-
-Para poder rodar os `ESLint` em um projeto basta executar o comando `npm install` dentro do projeto e depois `npm run lint`. Se a análise do `ESLint` encontrar problemas no seu código, tais problemas serão mostrados no seu terminal. Se não houver problema no seu código, nada será impresso no seu terminal.
-
-Você pode também instalar o plugin do `ESLint` no `VSCode`, bastar ir em extensions e baixar o [plugin `ESLint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 
 ---
 
@@ -364,7 +347,7 @@ Para sinalizar que o seu projeto está pronto para o _"Code Review"_ dos seus co
 
   * No menu à direita, clique no _link_ **"Assignees"** e escolha **o seu usuário**;
 
-  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-05`.
+  * No menu à direita, clique no _link_ **"Reviewers"** e digite `students`, selecione o time `tryber/students-sd-04`.
 
 Caso tenha alguma dúvida, [aqui tem um video explicativo](https://vimeo.com/362189205).
 
