@@ -18,9 +18,6 @@ db.movies.aggregate([
       languages: { $all: ["English", "Spanish"] },
     },
   },
-  {
-    $count: "quantidade de documentos",
-  },
 ]);
 
 /* LIÇÕES:
@@ -35,6 +32,6 @@ funciona similar ao operador $or;
 funciona similar ao operador $nor;
 - poderia utilizar o operador $limit para controlar a quantidade de resultados;
 utilizei o operador $count e constatei que já estavam sendo retornados 41 documentos;
-- referência $count documentação oficial do mongo:
+  { $count: "quantidade de documentos" }
 https://docs.mongodb.com/manual/reference/operator/aggregation/count/
 */

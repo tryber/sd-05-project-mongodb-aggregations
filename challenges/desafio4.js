@@ -35,9 +35,6 @@ db.movies.aggregate([
       title_split: 1,
     },
   },
-  {
-    $count: "quantidade de documentos",
-  },
 ]);
 
 /* LIÇÕES
@@ -49,4 +46,5 @@ https://docs.mongodb.com/manual/reference/operator/aggregation/split/
 https://docs.mongodb.com/manual/reference/operator/aggregation/size/
 - na projeção ($project) também é possível utilizar false ao invés de 0 e true ao invés de 1;
 - utilizei o $count para constatar que 8068 documentos seriam retornados;
+  { $count: "quantidade de documentos" }
 */
