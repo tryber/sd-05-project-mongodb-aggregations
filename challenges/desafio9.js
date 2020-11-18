@@ -1,6 +1,14 @@
 db.trips.aggregate([
-  { $match: { birthYear: { $ne: "" } } },
-  { $addFields: { year: { $toInt: "$birthYear" } } },
+  {
+    $match: {
+      birthYear: { $ne: "" }
+    }
+  },
+  {
+    $addFields: {
+      year: { $toInt: "$birthYear" }
+    }
+  },
   {
     $group: {
       _id: null,
