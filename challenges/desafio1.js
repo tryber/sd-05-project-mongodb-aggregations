@@ -18,9 +18,6 @@ db.movies.aggregate([
       languages: { $all: ["English", "Spanish"] },
     },
   },
-  {
-    $count: "quantidade de documentos",
-  },
 ]);
 
 /* LIÇÕES:
