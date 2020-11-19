@@ -51,6 +51,7 @@ https://docs.mongodb.com/manual/reference/operator/aggregation/stdDevSamp/
 \d : ANY ONE digit/non-digit character. Digits are [0-9];
 +  : one or more (1+), e.g., [0-9]+ matches one or more digits such as '123', '000'.
 https://www3.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html
-- na utilização do operador $group o id precisar ser null, não pode ser false;
+- o operador $group organiza o que recebe de input e gera um output para ser projetado;
+- nesse caso não precisa agrupar pelo id, mas como o id vem por padrão, foi define null;
 https://docs.mongodb.com/manual/reference/operator/aggregation/group/
 */
