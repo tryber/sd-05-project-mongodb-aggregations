@@ -2,8 +2,8 @@ db.movies.aggregate([
   {
     $match: {
       countries: { $in: ["USA"] },
-      "tomatoes.viewer.rating": { $gte: 3 }
-    }
+      "tomatoes.viewer.rating": { $gte: 3 },
+    },
   },
   {
     $addFields: {
@@ -15,22 +15,22 @@ db.movies.aggregate([
               "Tom Hanks",
               "Julia Roberts",
               "Kevin Spacey",
-              "George Clooney"
-            ]
+              "George Clooney",
+            ],
           },
           in: {
             $cond: {
-              if: { $eq: [{ $type: "$cast" }, "array"], },
+              if: { $eq: [{ $type: "$cast" }, "array"] },
               then: { $size: { $setIntersection: ["$cast", "$$cast_favs"] } },
-              else: 0
-            }
-          }
-        }
-      }
-    }
+              else: 0,
+            },
+          },
+        },
+      },
+    },
   },
   { $sort: { num_favs: -1, "tomatoes.viewer.rating": -1, title: -1 } },
   { $project: { _id: 0, title: 1 } },
   { $skip: 24 },
-  { $limit: 1 }
+  { $limit: 1 },
 ]);
