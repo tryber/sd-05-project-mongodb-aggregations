@@ -43,8 +43,8 @@ db.trips.aggregate([
 - o $group agrupa resultados por $usertype (Subscriber ou Customer) e cria o campo duracaoMedia;
 - $subtract obtém a diferença do horário de saída e horário de chegada;
 - as multiplicações e divisão convertem os valores para hora;
-- as consts foram criadas para melhor legibilidade do código e por inspiração
-no código do colega Felipe Vieira;
+- as consts milisec/sec/min foram criadas para melhor legibilidade do código
+e por inspiração no código do colega Felipe Vieira;
 - $sort de forma crescente (valor: 1);
 */
 
