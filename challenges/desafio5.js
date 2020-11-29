@@ -13,21 +13,21 @@ db.movies.aggregate(
             "Tom Hanks",
             "Julia Roberts",
             "Kevin Spacey",
-            "George Clooney"
-          ]
+            "George Clooney",
+          ],
         },
         countries: { $eq: ["USA"] },
-        "tomatoes.viewer.rating": { $gte: 3 }
-      }
+        "tomatoes.viewer.rating": { $gte: 3 },
+      },
     },
     {
       $project: {
         _id: 0,
-        title: 1
-      }
+        title: 1,
+      },
     },
     {
-      $sort: { num_favs: -1, "tomatoes.viwer.rating": -1, title: -1 }
-    }
-  ]
+      $sort: { num_favs: -1, "tomatoes.viwer.rating": -1, title: -1 },
+    },
+  ],
 ).pretty();
