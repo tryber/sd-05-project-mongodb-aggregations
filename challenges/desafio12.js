@@ -37,7 +37,7 @@ db.trips.aggregate([
 ]);
 
 /* LIÇÕES
-- do pipeline anterior, já sabíamos que o dia era quinta-feira,
+- do desafio anterior, já sabíamos que o dia era quinta-feira,
 o que aparece no $match: { diaDaSemana : 5 };
 - $addFields é um estágio da pipeline que adiciona novos campos aos documentos;
 - $group reúne resultados pelo nome da estação de trem e projeta;
