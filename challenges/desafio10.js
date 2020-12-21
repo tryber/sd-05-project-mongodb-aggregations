@@ -12,7 +12,7 @@ db.trips.aggregate(
             $divide: [{
               $subtract: ["$stopTime", "$startTime"],
             },
-            millisec * sec * min
+            millisec * sec * min,
             ],
           },
         },
@@ -28,5 +28,5 @@ db.trips.aggregate(
     {
       $sort: { duracaoMedia: 1 },
     },
-  ]
+  ],
 );

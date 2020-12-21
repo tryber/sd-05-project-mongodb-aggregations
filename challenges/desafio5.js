@@ -17,7 +17,7 @@ db.movies.aggregate(
     },
     {
       $addFields: {
-        "num_favs": {
+        num_favs: {
           $size:
           {
             $setIntersection: [
@@ -28,11 +28,11 @@ db.movies.aggregate(
                 "Julia Roberts",
                 "Kevin Spacey",
                 "George Clooney",
-              ]
-            ]
-          }
-        }
-      }
+              ],
+            ],
+          },
+        },
+      },
     },
     {
       $sort: { num_favs: -1, "tomatoes.viewer.rating": -1, title: -1 },
@@ -44,10 +44,10 @@ db.movies.aggregate(
       },
     },
     {
-      $skip: 24
+      $skip: 24,
     },
     {
-      $limit: 1
-    }
+      $limit: 1,
+    },
   ],
 ).pretty();
