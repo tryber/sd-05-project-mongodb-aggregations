@@ -1,12 +1,9 @@
-// falta> crie um novo campo chamado num_favs, que represente quantos
-// atores ou atrizes da nossa lista de favoritos aparecem no elenco (campo cast)
-// do filme. Por fim, utilizando o mesmo pipeline, responda: Qual o título do vigésimo
-// quinto filme do resultado dessa agregação?
-
 db.movies.aggregate(
   [
     {
       $match: {
+        countries: "USA",
+        "tomatoes.viewer.rating": { $gte: 3 },
         cast: {
           $in: [
             "Sandra Bullock",
@@ -16,9 +13,29 @@ db.movies.aggregate(
             "George Clooney",
           ],
         },
-        countries: { $eq: ["USA"] },
-        "tomatoes.viewer.rating": { $gte: 3 },
       },
+    },
+    {
+      $addFields: {
+        "num_favs": {
+          $size:
+          {
+            $setIntersection: [
+              "$cast",
+              [
+                "Sandra Bullock",
+                "Tom Hanks",
+                "Julia Roberts",
+                "Kevin Spacey",
+                "George Clooney",
+              ]
+            ]
+          }
+        }
+      }
+    },
+    {
+      $sort: { num_favs: -1, "tomatoes.viewer.rating": -1, title: -1 },
     },
     {
       $project: {
@@ -27,7 +44,10 @@ db.movies.aggregate(
       },
     },
     {
-      $sort: { num_favs: -1, "tomatoes.viwer.rating": -1, title: -1 },
+      $skip: 24
     },
+    {
+      $limit: 1
+    }
   ],
 ).pretty();
