@@ -1,16 +1,8 @@
 db.trips.aggregate([
   {
-    $match: {
-      startTime: {
-        $leq: ISODate("2016-03-10T23:59:59Z"),
-        $gte: ISODate("2016-03-10T00:00:00Z"),
-      },
-    },
-  },
-  {
     $group: {
-      _id: null,
-      duracaoMediaEmMinutos: {
+      _id: "$bikeid",
+      duracaoMedia: {
         $avg:
         {
           $subtract: [
@@ -23,15 +15,24 @@ db.trips.aggregate([
   {
     $project: {
       _id: 0,
-      duracaoMediaEmMinutos: {
+      bikeId: "$_id",
+      duracaoMedia: {
         $ceil: {
           $divide: [
             // dividindo por 60.000 para
             // transformar milisegundos em minutos
-            "$duracaoMediaEmMinutos", 60000,
+            "$duracaoMedia", 60000,
           ],
         },
       },
     },
+  },
+  {
+    $sort: {
+      duracaoMedia: -1,
+    },
+  },
+  {
+    $limit: 5,
   },
 ]).pretty();
