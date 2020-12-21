@@ -5,8 +5,13 @@ const min = 60;
 db.trips.aggregate(
   [
     {
+      $match: {
+        usertype: { $exists: true },
+      },
+    },
+    {
       $group: {
-        _id: "$userType",
+        _id: "$usertype",
         duracaoMedia: {
           $avg: {
             $divide: [{
