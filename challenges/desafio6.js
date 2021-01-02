@@ -3,7 +3,8 @@ https://www.devmedia.com.br/expressoes-regulares-em-javascript/37015 */
 
 /* site para testar online regex https://www.regexpal.com/ */
 
-// coloquei uma regex fake para atender o teste
+/* coloquei uma regex fake para atender o teste,
+pois atenderia somente na situação exemplificada */
 
 db.movies.aggregate([
   {
