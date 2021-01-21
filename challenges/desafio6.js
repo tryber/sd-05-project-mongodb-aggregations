@@ -1,7 +1,9 @@
+// regex consultada no endereço: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions
+// Duvidas desse desafio tiradas no plantão com Coruja e Cristiano
 db.movies.aggregate([
   {
     $match: {
-      awards: { $exists: 1 },
+      awards: { $regex: /^Won \d+ Osc/ },
     },
   },
   {
@@ -15,6 +17,7 @@ db.movies.aggregate([
   },
   {
     $project: {
+      _id: 0,
       maior_rating: 1,
       menor_rating: 1,
       media_rating: { $round: ["$media_rating", 1] },
